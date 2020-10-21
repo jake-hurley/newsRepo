@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getAllNews, getNewsById } from '../api'
+import { getNewsById } from '../api'
 
 
 class Article extends React.Component {

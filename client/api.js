@@ -1,10 +1,7 @@
-
 const APIURL = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=`
 const APIKEY = '3055f8f90fa44bbe8bda05385a20690a'
 
-
 export function getAllNews () {
-    // console.log(APIURL + APIKEY)
     return fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=3055f8f90fa44bbe8bda05385a20690a')
     .then(response => {
         return response.json()
@@ -17,15 +14,17 @@ export function getAllNews () {
 export function getNewsById(id) {
     return getAllNews()
     .then(response => {
-        return response.articles.find(article => article.id === Number(id))
+        return response.articles.find(article => article.id === id)
     })
 }
 
+
+// ASSIGN AN ID FOR EACH ARTICLE BASED ON URL ID PROVIDED AT THE END OF ARTICLE.URL 
 function assignArticleIds (articles) {
-    let idCounter = 0
     articles.articles.map(article => {
-        article.id = idCounter
-        idCounter++
+        const getIdFromUrl = article.url.split('-')
+        const newId = getIdFromUrl[getIdFromUrl.length - 1]
+        article.id = newId
     })
     return articles
 }

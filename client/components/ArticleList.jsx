@@ -1,11 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
 import { getAllNews } from '../api'
-
-import Article from './Article'
-
 
 class ArticleList extends React.Component {
 
@@ -44,7 +40,7 @@ class ArticleList extends React.Component {
                     <h1>Articles</h1>
                     {this.state.articles.map(article => {
                         return (
-                            <Link to={`/article/${this.state.articles.indexOf(article)}`} key={article.id}>
+                            <Link to={`/article/${article.id}`} key={article.id}>
                                 <div>
                                     <h1>{article.title}</h1>
                                     <p>{article.description}</p>
