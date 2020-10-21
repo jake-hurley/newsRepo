@@ -9,4 +9,23 @@ export function getAllNews () {
     .then(response => {
         return response.json()
     })
+    .then(data => {
+        return assignArticleIds(data)
+    })
+}
+
+export function getNewsById(id) {
+    return getAllNews()
+    .then(response => {
+        return response.articles.find(article => article.id === Number(id))
+    })
+}
+
+function assignArticleIds (articles) {
+    let idCounter = 0
+    articles.articles.map(article => {
+        article.id = idCounter
+        idCounter++
+    })
+    return articles
 }
