@@ -28,7 +28,6 @@ class ArticleList extends React.Component {
             isLoaded: true
           })
       })
-      console.log(this.state)
     }
 
     articleSelector = (article) => {
@@ -39,16 +38,14 @@ class ArticleList extends React.Component {
     }
 
     render () {
-        if((this.state.isLoaded) && (!this.state.articleIsSelected)){
-        // if(this.state.isLoaded){
+        if(this.state.isLoaded){
             return (
                 <div>
                     <h1>Articles</h1>
                     {this.state.articles.map(article => {
                         return (
-                            <Link to={`/article/${this.state.articles.indexOf(article)}`}>
-                                {/*<div key={article.title} onClick={() => this.articleSelector(article)}> */}
-                                <div key={article.title}>
+                            <Link to={`/article/${this.state.articles.indexOf(article)}`} key={article.id}>
+                                <div>
                                     <h1>{article.title}</h1>
                                     <p>{article.description}</p>
                                     <h4>{article.author}</h4>
@@ -57,12 +54,6 @@ class ArticleList extends React.Component {
                         )
                     })}
                 </div>
-            )
-        } else if ((this.state.isLoaded) && (this.state.articleIsSelected)) {
-            return (
-                <>
-                    <Article data={this.state.selectedArticle}/>
-                </>
             )
         } else {
             return(
