@@ -7,9 +7,7 @@ class ArticleList extends React.Component {
 
     state = {
         articles: [],
-        isLoaded: false,
-        articleIsSelected: false,
-        selectedArticle: []
+        isLoaded: false
       }
 
     componentDidMount () {
@@ -24,13 +22,6 @@ class ArticleList extends React.Component {
             isLoaded: true
           })
       })
-    }
-
-    articleSelector = (article) => {
-        this.setState({
-            articleIsSelected: true,
-            selectedArticle: article
-        })
     }
 
     render () {
