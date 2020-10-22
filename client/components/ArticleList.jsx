@@ -31,7 +31,7 @@ class ArticleList extends React.Component {
                     <h1>Articles</h1>
                     {this.state.articles.map(article => {
                         return (
-                            <Link to={`/article/${article.id}`} key={article.id}>
+                            <Link to={{pathname:`/article/${article.id}`, state: article}} key={article.id}>
                                 <div>
                                     <h1>{article.title}</h1>
                                     <p>{article.description}</p>

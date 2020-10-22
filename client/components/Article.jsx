@@ -12,17 +12,27 @@ class Article extends React.Component {
 
     componentDidMount() {
         const articleId = this.props.match.params.id
+        console.log(this.props)
         this.getArticleData(articleId)
     }
 
     getArticleData = (articleId) => {
-        getNewsById(articleId)
-        .then(articleData => {
+        if(this.props.location.state === undefined) {
+            console.log('props missing')
+            getNewsById(articleId)
+            .then(articleData => {
+                this.setState({
+                    articleData,
+                    isLoaded: true
+                })
+            })
+        } else {
             this.setState({
-                articleData,
+                articleData: this.props.location.state,
                 isLoaded: true
             })
-        })
+        }
+        
     }
 
     render () {
