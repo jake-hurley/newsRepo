@@ -24,12 +24,23 @@ class ArticleList extends React.Component {
       })
     }
 
+    changeHandler = () => {
+
+    }
+
     render () {
         if(this.state.isLoaded){
             return (
                 <div>
                     <h1>Articles</h1>
+                    <select onChange={this.changeHandler} placeholder="All">
+                        <option>Alls</option>
+                        <option>World</option>
+                        <option>Business</option>
+                        <option>Politics</option>
+                    </select>
                     {this.state.articles.map(article => {
+                        console.log(article)
                         return (
                             <Link to={{pathname:`/article/${article.id}`, state: article}} key={article.id}>
                                 <div>
