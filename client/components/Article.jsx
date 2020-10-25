@@ -41,16 +41,16 @@ class Article extends React.Component {
         if(this.state.isLoaded){
             return (
                 <>
-                    <h1>{articleData.title}</h1>
-                    <h3>Source: {articleData.author}</h3>
-                    <p>
+                    <h1 className='article-title'>{articleData.title}</h1>
+                    <h3 className='article-source'>Source: {articleData.author}</h3>
+                    <p className='article-date'>
                         CONVERT ME! {articleData.publishedAt}
                     </p>
-                    <img src={articleData.urlToImage}></img>
-                    <p>
+                    <img src={articleData.urlToImage} className='article-image'></img>
+                    <p className='article-content'>
                         {articleData.content}
                     </p>
-                    <a href={articleData.url} target='_blank'>Read More</a>
+                    <a href={articleData.url} target='_blank' className='article-link'>Read More</a>
                 </> 
             )
     } else {

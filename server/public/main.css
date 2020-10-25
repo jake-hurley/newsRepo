@@ -77,6 +77,9 @@ a {
     display: flex;
     flex-wrap: wrap;
     border-radius: 10px;
+
+    -webkit-box-shadow: 11px 5px 19px 5px rgba(0,0,0,0.14); 
+    box-shadow: 11px 5px 19px 5px rgba(0,0,0,0.14);
 }
 
 .article-list-image {
@@ -86,6 +89,7 @@ a {
 }
 
 .article-list-title {
+    font-size: 180%;
     font-family: 'Segoe UI';
 }
 
