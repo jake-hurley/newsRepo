@@ -15,7 +15,7 @@ class Home extends React.Component {
     const todaysDate = this.formatTodaysDate(Date.now())
     return (
       <>
-        <h1 className='todays-top-news'>Todays top News</h1>
+        <h1 className='todays-top-news'>TODAYS TOP NEWS</h1>
         <h3 className='todays-date'>{todaysDate}</h3>
         <ArticleList />
       </>

@@ -1,0 +1,79 @@
+body {
+    background: #E1E1E1;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HOMEPAGE */
+
+.todays-top-news {
+    font-family: 'Segoe UI';
+    font-size: 500%;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    color: #ACA8A8;
+}
+
+.todays-date {
+    color: #707070;
+    font-family: 'Montserrat';
+    text-align: center;
+    font-size: 150%;
+    font-weight: 800;
+}
+
+.loading-container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.loading {
+    display: block;
+    width:10%;
+    margin: 5% auto;
+}
+
+/* Article List */
+
+.dropdown {
+    display: block;
+    width: 10%;
+    margin: 1% auto;
+    font-size: 150%;
+    border-radius: 10px;
+    padding: 0.25%;
+    background: #ACA8A8;
+    color: white;
+    border: none;
+}
+
+.dropdown:focus {
+    outline: none;
+}
+
+.article-list-div {
+    background:#ACA8A8;
+    color: white;
+    margin: 1% auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.article-list-image {
+    width: 20%;
+    margin: 2%;
+    border-radius: 10px;
+}
+
+.article-list-title {
+    font-family: 'Segoe UI';
+}
+
+
+
+
