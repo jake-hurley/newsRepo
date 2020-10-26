@@ -42,6 +42,7 @@ class ArticleList extends React.Component {
                         <option value='business' className='dropdown-option'>Business</option>
                         <option value='-us-' className='dropdown-option'>United States</option>
                         <option value='world-europe' className='dropdown-option'>Europe</option>
+                        <option value='world-africa' className='dropdown-option'>Africa</option>
                         <option value='world-asia' className='dropdown-option'>Asia</option>
                     </select>
 
