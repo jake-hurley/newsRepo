@@ -119,10 +119,9 @@ a {
 
 .article-source {
     font-family: 'Montserrat';
-    color: #695f5f;
     width: 80%;
     display: inline;
-    color:white;
+    color:#bb1819;
 }
 
 .article-text-div {
@@ -157,9 +156,22 @@ a {
     
 }
 
-.article-link {
+.article-link, .article-home-button {
+    display: block;
     font-family: 'Montserrat';
-    color:white;
+    color:#bb1819;
     font-size: 1.2em;
+    margin-bottom: 1%;
 }
 
+.article-link:hover, .article-home-button:hover {
+    filter: brightness(50%);
+}
+
+
+/* LAPTOP */
+
+@media only screen and (max-width: 1600px) and (min-width: 1000px) {
+
+    
+}
