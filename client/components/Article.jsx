@@ -47,7 +47,6 @@ class Article extends React.Component {
 
     render () {
         const articleData = this.state.articleData
-        console.log(this.state)
         if(this.state.isLoaded){
             return (
                 <>

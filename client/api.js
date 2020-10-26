@@ -33,5 +33,3 @@ function assignArticleIds (articles) {
     })
     return articles
 }
-
-'http://www.bbc.co.uk/sport/formula1/54682833'
