@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import { getNewsById } from '../api'
 
-
 class Article extends React.Component {
 
     state = {
@@ -36,27 +35,28 @@ class Article extends React.Component {
         }  
     }
 
+    formatContent = (articleData) => {
+        articleData.content = articleData.content.split('image caption')[1]
+        this.setState({
+            articleData,
+            isLoaded: true
+        }, this.convertDateToHoursAgo)
+    }
+
     getArticleData = (articleId) => {
-        // If data is not passed through props (refresh button was clicked) grab it from the API.
+        // If data is not passed through props (due to refresh button being clicked) grab it from the API.
         if(this.props.location.state === undefined) {
             getNewsById(articleId)
             .then(articleData => {
-                this.setState({
-                    articleData,
-                    isLoaded: true
-                }, this.convertDateToHoursAgo)
+                this.formatContent(articleData)
             })
         } else {
-            this.setState({
-                articleData: this.props.location.state,
-                isLoaded: true
-            }, this.convertDateToHoursAgo)
+            this.formatContent(this.props.location.state)
         }
     }
 
     render () {
         const articleData = this.state.articleData
-        console.log(this.state)
         if(this.state.isLoaded){
             return (
                 <>
