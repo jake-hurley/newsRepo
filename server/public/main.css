@@ -106,6 +106,9 @@ a {
     border-radius: 10px;
     width: 60%;
     margin: 0 auto;
+    
+    box-shadow: 13px 10px 70px -1px rgba(0,0,0,0.32);
+    -webkit-box-shadow: 13px 10px 35px -1px rgba(0,0,0,0.32);
 }
 
 .article-title {
@@ -129,6 +132,7 @@ a {
     margin: 2%;
     padding-top: 2%;
     padding-bottom: 2%;
+
 }
 
 .article-date {
@@ -173,5 +177,32 @@ a {
 
 @media only screen and (max-width: 1600px) and (min-width: 1000px) {
 
-    
+    .todays-top-news {
+        margin: 1%;
+    }
+
+    .dropdown {
+        text-align: center;
+        width: 15%;
+    }
+
+    .article-list-title {
+        font-size: 1.4em;
+    }
+
+    .article-list-description {
+        font-size: 0.8em;
+    }
+
+    /* ARTICLE */
+
+    .article-title {
+        font-size: 2em;
+    }
+
+    .article-image-div {
+        margin-top: 8%;
+    }
+
+
 }

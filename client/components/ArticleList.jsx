@@ -45,7 +45,7 @@ class ArticleList extends React.Component {
                         <option value='world-asia' className='dropdown-option'>Asia</option>
                     </select>
 
-                    {this.state.articles.map(article => {
+                    {this.state.articles.map(article => {  
                         if(article.url.includes(this.state.currentTopic)) {
                             return (
                                 <Link to={{pathname:`/article/${article.id}`, state: article}} className='article-list-link' key={article.id}>

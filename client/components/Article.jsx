@@ -36,7 +36,20 @@ class Article extends React.Component {
     }
 
     formatContent = (articleData) => {
-        articleData.content = articleData.content.split('image caption')[1]
+        // Removes captions and copyright data from beginning of articles content.
+        if (articleData.content.includes('\n')) {
+        articleData.content = articleData.content.split('\n')
+        articleData.content = articleData.content[articleData.content.length - 1]
+        }
+        if(articleData.content.includes('image caption')) {
+            articleData.content = articleData.content.split('image caption')[1]
+        }
+        if(articleData.content.includes('Video caption')) {
+            articleData.content = articleData.content.split('Video caption:')[1]
+        }
+        // if(articleData.content.includes('copyright')) {
+        //     articleData.content = articleData.content.split('Getty Images')[1]
+        // }
         this.setState({
             articleData,
             isLoaded: true
