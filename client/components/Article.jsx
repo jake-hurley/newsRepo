@@ -17,14 +17,23 @@ class Article extends React.Component {
     }
 
     convertDateToHoursAgo = () => {
-        const time = new Date()
-        const unconvertedArticleTime = this.state.articleData.publishedAt.split('T')[1]
-        const convertedArticleTime = Number(unconvertedArticleTime[0] + unconvertedArticleTime[1])
-        const currentTime = time.getHours()
-        const hoursAgo =  (24 - convertedArticleTime) + currentTime
-        this.setState({
-            hoursAgo
-        })
+        // Splits the articles date and time of publish and calculates how many hours ago the article was published.
+        const currentDay = new Date().getDate()
+        const currentHour = new Date().getHours()
+        const splitArticleTime = this.state.articleData.publishedAt.split('T')
+        const articleDate = Number(splitArticleTime[0][8] + splitArticleTime[0][9])
+        const articleTime = Number(splitArticleTime[1][0] + splitArticleTime[1][1])
+        if (currentDay === articleDate) {
+            const hoursAgo = currentHour - articleTime
+            this.setState({
+                hoursAgo
+            })
+        } else {
+            const hoursAgo =  (24 - articleTime) + currentHour
+            this.setState({
+                hoursAgo
+            })
+        }  
     }
 
     getArticleData = (articleId) => {
@@ -47,6 +56,7 @@ class Article extends React.Component {
 
     render () {
         const articleData = this.state.articleData
+        console.log(this.state)
         if(this.state.isLoaded){
             return (
                 <>

@@ -21,6 +21,7 @@ export function getNewsById(id) {
 // ASSIGN AN ID FOR EACH ARTICLE BASED ON URL ID PROVIDED AT THE END OF ARTICLE.URL 
 function assignArticleIds (articles) {
     articles.articles.map(article => {
+        // CHECKS FOR BBC SPORT URL
         if (article.url.includes('sport')) {
             const getIdFromUrl = article.url.split('/')
             const newId = getIdFromUrl[getIdFromUrl.length - 1]
