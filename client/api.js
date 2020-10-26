@@ -21,9 +21,17 @@ export function getNewsById(id) {
 // ASSIGN AN ID FOR EACH ARTICLE BASED ON URL ID PROVIDED AT THE END OF ARTICLE.URL 
 function assignArticleIds (articles) {
     articles.articles.map(article => {
-        const getIdFromUrl = article.url.split('-')
-        const newId = getIdFromUrl[getIdFromUrl.length - 1]
-        article.id = newId
+        if (article.url.includes('sport')) {
+            const getIdFromUrl = article.url.split('/')
+            const newId = getIdFromUrl[getIdFromUrl.length - 1]
+            article.id = newId
+        } else {
+            const getIdFromUrl = article.url.split('-')
+            const newId = getIdFromUrl[getIdFromUrl.length - 1]
+            article.id = newId
+        }
     })
     return articles
 }
+
+'http://www.bbc.co.uk/sport/formula1/54682833'
